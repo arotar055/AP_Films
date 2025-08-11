@@ -1,0 +1,33 @@
+﻿@page
+@model AP_Films.Pages.IndexModel
+@{
+    ViewData["Title"] = "Best Movies";
+}
+<div class="container mt-4">
+    <h1 class="mb-4 text-center">10 Best Movies</h1>
+    <div class="text-right mb-3">
+        <a asp-page="Create" class="btn btn-success btn-sm">Add Movies</a>
+    </div>
+    @foreach (var m in Model.Movies)
+    {
+        <div class="card film-card mb-4">
+            <div class="row g-0">
+                <div class="col-auto poster-frame">
+                    <img src="@m.Poster" alt="@m.Title Poster">
+                </div>
+                <div class="col">
+                    <div class="card-body">
+                        <h5 class="card-title">@m.Title (@m.Year)</h5>
+                        <p><strong>Режиссер:</strong> @m.Director</p>
+                        <p><strong>Жанр:</strong> @m.Genre</p>
+                        <div class="mt-3">
+                            <a class="btn btn-primary btn-sm me-2" asp-page="Details" asp-route-id="@m.Id">Details</a>
+                            <a class="btn btn-warning btn-sm me-2" asp-page="Edit" asp-route-id="@m.Id">Edit</a>
+                            <a class="btn btn-danger btn-sm" asp-page="Delete" asp-route-id="@m.Id">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>

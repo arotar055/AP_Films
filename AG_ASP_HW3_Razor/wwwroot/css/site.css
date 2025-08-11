@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.film-card {
+    transition: transform 0.2s ease-in-out;
+}
+
+    .film-card:hover {
+        transform: scale(1.02);
+    }
+
+.poster-frame {
+    width: 300px;
+    height: 533px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.poster-frame img {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.field-validation-error {
+    color: red;
+    font-weight: bold;
+    margin-top: 0.25rem;
+}
+
+.field-validation-valid {
+    display: none;
+}
